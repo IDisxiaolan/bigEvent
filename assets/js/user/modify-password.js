@@ -22,6 +22,8 @@ $(function() {
                 }
                 layer.msg('修改密码成功')
                 $('.layui-form')[0].reset()
+                window.location.href = "../login.js"
             })
     })
+
 })
