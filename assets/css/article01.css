@@ -1,0 +1,20 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 15px;
+    background-color: #f2f3f5;
+}
+
+.add-btn {
+    float: right;
+    margin-top: 6px;
+}
+
+#form-add,
+#form-edit {
+    padding-top: 20px;
+    padding-right: 20px;
+}
