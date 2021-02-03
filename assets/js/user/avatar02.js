@@ -39,5 +39,5 @@ $(() => {
         })
         .toDataURL('image/png')
 
-    axios.post('/my/update/avatar', avatar dataURL)
+    // axios.post('/my/update/avatar', avatar dataURL)
 })

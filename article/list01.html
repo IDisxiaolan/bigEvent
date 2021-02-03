@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表页</title>
+    <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="/assets/css/list01.css">
+</head>
+
+<body>
+
+    <div class="layui-card">
+        <div class="layui-card-header">卡片面板</div>
+        <div class="layui-card-body">
+            <!-- 筛选 -->
+            <form class="layui-form form-search" action="">
+                <div class="layui-form-item layui-input-inline">
+                    <select name="cate_id" lay-verify="">
+                       
+                      
+                      </select>
+                </div>
+                <div class="layui-form-item layui-input-inline">
+                    <select name="state" lay-verify="">
+                        <option value="010">所有状态</option>
+                        <option value="已发布">已发布</option>
+                        <option value="草稿">草稿</option>                      
+                      </select>
+                </div>
+                <div class="layui-form-item layui-input-inline">
+
+                    <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+
+                </div>
+            </form>
+            <!-- 编辑 -->
+            <table class="layui-table">
+                <colgroup>
+                    <col width="250">
+                    <col width="200">
+                    <col width="200">
+                    <col width="200">
+                    <col width="200">
+
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>文章标题</th>
+                        <th>分类</th>
+                        <th>发表时间</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- 分页 -->
+    <!-- 表格模板 -->
+    <script type="text/html" id="tpl">
+        {{each data}}
+        <tr>
+            <td>{{$value.title}}</td>
+            <td>{{$value.cate_name}}</td>
+            <td>{{$value.pub_date|dateformat}}</td>
+            <td>{{$value.state}}</td>
+            <td>
+                <button class="layui-btn layui-btn-sm " lay-submit lay-filter="formDemo">编辑</button>
+                <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm layui-btn-warm">删除</button>
+            </td>
+        </tr>
+        {{/each}}
+    </script>
+    <!-- 筛选分类模板 -->
+    <script type="text/html" id="tpl-cate">
+        <option value="010">所有分类</option>
+        {{each data}}
+        <option value="{{$value.Id}}">{{$value.name}}</option>
+        {{/each}}
+    </script>
+
+    </script>
+    <script src="/assets/lib/moment.js"></script>
+    <script src="/assets/lib/template-web.js"></script>
+    <script src="/assets/lib/layui/layui.all.js"></script>
+    <script src="/assets/lib/jquery.js"></script>
+    <script src="/assets/lib/axios.js"></script>
+    <script src="/assets/js/commonAPI.js"></script>
+    <script src="/assets/js/article/list01.js"></script>
+</body>
+
+</html>

@@ -19,6 +19,7 @@ $(() => {
 
 
     })
+
     $('.layui-btn-danger').click(function() {
         console.log('hello');
         const avatarUrl = $image.cropper('getCroppedCanvas', {
